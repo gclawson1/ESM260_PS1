@@ -289,7 +289,7 @@ abline(fit4 <- lm(trout_recruits_q3$recruits_100m ~ trout$density))
 legend("top", bty="n", legend=paste("R2 =", 
        format(summary(fit4)$r.squared, digits=4)))
 ```
-
+###Question 4
 ```{r}
 plot(fine_coral$density, surgeon$density, xlab = "Fine-branching Coral Density (m2 per 100m2)", ylab = "Surgeonfish Adult Density (per 100m2)", main = "Fine-branching Coral Density vs Surgeonfish Adult Density")
 abline(fit_fine <- lm(surgeon$density ~ fine_coral$density ))
@@ -311,5 +311,85 @@ abline(fit_sea <- lm(spotted$density ~ sea_an$density ))
 legend("top", bty="n", legend=paste("R2 =", 
        format(summary(fit_sea)$r.squared, digits=4)))
 ```
+
+###Question 5
+```{r}
+adults_5 <- read_excel("04_Data_set_1.xlsx", sheet = "adults_5")
+```
+
+```{r}
+surgeon_5 <- adults_5 %>% 
+  filter(organism == "surgeonfish") 
+yellow_5 <- adults_5 %>%
+  filter(organism == "yellow damsel")
+spotted_5 <- adults_5 %>%
+  filter(organism == "spotted damsel")
+trout_5 <- adults_5 %>%
+  filter(organism == "coral trout")
+
+```
+
+```{r}
+##surgeon graph
+ggplot(surgeon_5, aes(x = location, y = density_per_micro, fill = location)) +
+  geom_col(width = 0.95, alpha = 0.7) +
+  #geom_errorbar(aes(ymin = density - ci, ymax = density + ci), width = 0.5) +
+  facet_wrap(~year) +
+   #scale_y_continuous(expand = c(0,0), limits = c(-20,450), breaks = seq(0,400,100)) + 
+  scale_x_discrete(expand = c(0,0)) + 
+  scale_fill_manual(name = "", values = c("grey51", "royalblue")) +
+  theme_classic() + 
+  theme(legend.position = "none") +
+  labs(y = "Adult Mean Density (per 100 m^2)",
+       x = "Location",
+       title = "Adult Surgeonfish Mean Density")
+
+##spotted damsel graph
+ggplot(spotted_5, aes(x = location, y = density_per_micro, fill = location)) +
+  geom_col(width = 0.90, alpha = 0.7) +
+  #geom_errorbar(aes(ymin = density - ci, ymax = density + ci), width = 0.5) +
+  facet_wrap(~year) +
+   #scale_y_continuous(expand = c(0,0), limits = c(-20,450), breaks = seq(0,400,100)) + 
+  scale_x_discrete(expand = c(0,0)) + 
+  scale_fill_manual(name = "", values = c("grey51", "royalblue")) +
+  theme_classic() + 
+  theme(legend.position = "none") +
+  labs(y = "Adult Mean Density (per 100 m^2)",
+       x = "Location",
+       title = "Adult Spotted Damsel Mean Density")
+
+##yellow damsel graph
+ggplot(yellow_5, aes(x = location, y = density_per_micro, fill = location)) +
+  geom_col(width = 0.90, alpha = 0.7) +
+  #geom_errorbar(aes(ymin = density - ci, ymax = density + ci), width = 0.5) +
+  facet_wrap(~year) +
+   #scale_y_continuous(expand = c(0,0), limits = c(-20,450), breaks = seq(0,400,100)) + 
+  scale_x_discrete(expand = c(0,0)) + 
+  scale_fill_manual(name = "", values = c("grey51", "royalblue")) +
+  theme_classic() + 
+  theme(legend.position = "none") +
+  labs(y = "Adult Mean Density (per 100 m^2)",
+       x = "Location",
+       title = "Adult Yellow Damsel Mean Density")
+
+##trout graph
+ggplot(trout_5, aes(x = location, y = density_per_micro, fill = location)) +
+  geom_col(width = 0.90, alpha = 0.7) +
+  #geom_errorbar(aes(ymin = density - ci, ymax = density + ci), width = 0.5) +
+  facet_wrap(~year) +
+   #scale_y_continuous(expand = c(0,0), limits = c(-20,450), breaks = seq(0,400,100)) + 
+  scale_x_discrete(expand = c(0,0)) + 
+  scale_fill_manual(name = "", values = c("grey51", "royalblue")) +
+  theme_classic() + 
+  theme(legend.position = "none") +
+  labs(y = "Adult Mean Density (per 100 m^2)",
+       x = "Location",
+       title = "Adult Coral Trout Mean Density")
+```
+
+###Question 6
+Make scatterplots of all Adult Densities
+
+
 
 
