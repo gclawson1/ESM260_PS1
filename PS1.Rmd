@@ -55,7 +55,7 @@ ggplot(surgeon, aes(x = location, y = density, fill = location)) +
    scale_y_continuous(expand = c(0,0), limits = c(-20,450), breaks = seq(0,400,100)) + 
   scale_x_discrete(expand = c(0,0)) + 
   scale_fill_manual(name = "", values = c("grey51", "royalblue")) +
-  theme_classic() + 
+  theme_bw() + 
   theme(legend.position = "none") +
   labs(y = "Adult Mean Density (per 100 m^2)",
        x = "Location",
@@ -66,10 +66,9 @@ ggplot(spotted, aes(x = location, y = density, fill = location)) +
   geom_col(width = 0.90, alpha = 0.7) +
   geom_errorbar(aes(ymin = density - ci, ymax = density + ci), width = 0.5) +
   facet_wrap(~year) +
-   #scale_y_continuous(expand = c(0,0), limits = c(-20,450), breaks = seq(0,400,100)) + 
   scale_x_discrete(expand = c(0,0)) + 
   scale_fill_manual(name = "", values = c("grey51", "royalblue")) +
-  theme_classic() + 
+  theme_bw() + 
   theme(legend.position = "none") +
   labs(y = "Adult Mean Density (per 100 m^2)",
        x = "Location",
@@ -80,10 +79,9 @@ ggplot(yellow, aes(x = location, y = density, fill = location)) +
   geom_col(width = 0.90, alpha = 0.7) +
   geom_errorbar(aes(ymin = density - ci, ymax = density + ci), width = 0.5) +
   facet_wrap(~year) +
-   #scale_y_continuous(expand = c(0,0), limits = c(-20,450), breaks = seq(0,400,100)) + 
   scale_x_discrete(expand = c(0,0)) + 
   scale_fill_manual(name = "", values = c("grey51", "royalblue")) +
-  theme_classic() + 
+  theme_bw() + 
   theme(legend.position = "none") +
   labs(y = "Adult Mean Density (per 100 m^2)",
        x = "Location",
@@ -94,10 +92,9 @@ ggplot(trout, aes(x = location, y = density, fill = location)) +
   geom_col(width = 0.90, alpha = 0.7) +
   geom_errorbar(aes(ymin = density - ci, ymax = density + ci), width = 0.5) +
   facet_wrap(~year) +
-   #scale_y_continuous(expand = c(0,0), limits = c(-20,450), breaks = seq(0,400,100)) + 
   scale_x_discrete(expand = c(0,0)) + 
   scale_fill_manual(name = "", values = c("grey51", "royalblue")) +
-  theme_classic() + 
+  theme_bw() + 
   theme(legend.position = "none") +
   labs(y = "Adult Mean Density (per 100 m^2)",
        x = "Location",
@@ -108,10 +105,9 @@ ggplot(sea_an, aes(x = location, y = density, fill = location)) +
   geom_col(width = 0.90, alpha = 0.7) +
   geom_errorbar(aes(ymin = density - ci, ymax = density + ci), width = 0.5) +
   facet_wrap(~year) +
-   #scale_y_continuous(expand = c(0,0), limits = c(-20,450), breaks = seq(0,400,100)) + 
   scale_x_discrete(expand = c(0,0)) + 
   scale_fill_manual(name = "", values = c("grey51", "royalblue")) +
-  theme_classic() + 
+  theme_bw() + 
   theme(legend.position = "none") +
   labs(y = "Adult Mean Density (per 100 m^2)",
        x = "Location",
@@ -122,10 +118,9 @@ ggplot(mound_coral, aes(x = location, y = density, fill = location)) +
   geom_col(width = 0.90, alpha = 0.7) +
   geom_errorbar(aes(ymin = density - ci, ymax = density + ci), width = 0.5) +
   facet_wrap(~year) +
-   #scale_y_continuous(expand = c(0,0), limits = c(-20,450), breaks = seq(0,400,100)) + 
   scale_x_discrete(expand = c(0,0)) + 
   scale_fill_manual(name = "", values = c("grey51", "royalblue")) +
-  theme_classic() + 
+  theme_bw() + 
   theme(legend.position = "none") +
   labs(y = "Adult Mean Density (per 100 m^2)",
        x = "Location",
@@ -136,10 +131,9 @@ ggplot(fine_coral, aes(x = location, y = density, fill = location)) +
   geom_col(width = 0.90, alpha = 0.7) +
   geom_errorbar(aes(ymin = density - ci, ymax = density + ci), width = 0.5) +
   facet_wrap(~year) +
-   #scale_y_continuous(expand = c(0,0), limits = c(-20,450), breaks = seq(0,400,100)) + 
   scale_x_discrete(expand = c(0,0)) + 
   scale_fill_manual(name = "", values = c("grey51", "royalblue")) +
-  theme_classic() + 
+  theme_bw() + 
   theme(legend.position = "none") +
   labs(y = "Adult Mean Density (per 100 m^2)",
        x = "Location",
@@ -151,10 +145,9 @@ ggplot(coarse_corals, aes(x = location, y = density, fill = location)) +
   geom_col(width = 0.90, alpha = 0.7) +
   geom_errorbar(aes(ymin = density - ci, ymax = density + ci), width = 0.5) +
   facet_wrap(~year) +
-   #scale_y_continuous(expand = c(0,0), limits = c(-20,450), breaks = seq(0,400,100)) + 
   scale_x_discrete(expand = c(0,0)) + 
   scale_fill_manual(name = "", values = c("grey51", "royalblue")) +
-  theme_classic() + 
+  theme_bw() + 
   theme(legend.position = "none") +
   labs(y = "Adult Mean Density (per 100 m^2)",
        x = "Location",
@@ -165,10 +158,9 @@ ggplot(algae, aes(x = location, y = density, fill = location)) +
   geom_col(width = 0.90, alpha = 0.7) +
   geom_errorbar(aes(ymin = density - ci, ymax = density + ci), width = 0.5) +
   facet_wrap(~year) +
-   #scale_y_continuous(expand = c(0,0), limits = c(-20,450), breaks = seq(0,400,100)) + 
   scale_x_discrete(expand = c(0,0)) + 
   scale_fill_manual(name = "", values = c("grey51", "royalblue")) +
-  theme_classic() + 
+  theme_bw() + 
   theme(legend.position = "none") +
   labs(y = "Adult Mean Density (per 100 m^2)",
        x = "Location",
@@ -202,7 +194,7 @@ ggplot(surgeon_recruit, aes(x = location, y = recruits, fill = location)) +
    #scale_y_continuous(expand = c(0,0), limits = c(-20,450), breaks = seq(0,400,100)) + 
   scale_x_discrete(expand = c(0,0)) + 
   scale_fill_manual(name = "", values = c("grey51", "royalblue")) +
-  theme_classic() + 
+  theme_bw() + 
   theme(legend.position = "none") +
   labs(y = "Recruit Mean Density (per m^2 of Fine-branching Coral)",
        x = "Location",
@@ -216,7 +208,7 @@ ggplot(spotted_recruits, aes(x = location, y = recruits, fill = location)) +
    #scale_y_continuous(expand = c(0,0), limits = c(-20,450), breaks = seq(0,400,100)) + 
   scale_x_discrete(expand = c(0,0)) + 
   scale_fill_manual(name = "", values = c("grey51", "royalblue")) +
-  theme_classic() + 
+  theme_bw() + 
   theme(legend.position = "none") +
   labs(y = "Recruit Mean Density (per m^2 of Sea Anenome)",
        x = "Location",
@@ -230,7 +222,7 @@ ggplot(yellow_recruits, aes(x = location, y = recruits, fill = location)) +
    #scale_y_continuous(expand = c(0,0), limits = c(-20,450), breaks = seq(0,400,100)) + 
   scale_x_discrete(expand = c(0,0)) + 
   scale_fill_manual(name = "", values = c("grey51", "royalblue")) +
-  theme_classic() + 
+  theme_bw() + 
   theme(legend.position = "none") +
   labs(y = "Recruit Mean Density (per m^2 of Mounding Coral)",
        x = "Location",
@@ -244,7 +236,7 @@ ggplot(trout_recruits, aes(x = location, y = recruits, fill = location)) +
    #scale_y_continuous(expand = c(0,0), limits = c(-20,450), breaks = seq(0,400,100)) + 
   scale_x_discrete(expand = c(0,0)) + 
   scale_fill_manual(name = "", values = c("grey51", "royalblue")) +
-  theme_classic() + 
+  theme_bw() + 
   theme(legend.position = "none") +
   labs(y = "Recruit Mean Density (per m^2 of Coarse-branching Coral)",
        x = "Location",
@@ -289,6 +281,7 @@ abline(fit4 <- lm(trout_recruits_q3$recruits_100m ~ trout$density))
 legend("top", bty="n", legend=paste("R2 =", 
        format(summary(fit4)$r.squared, digits=4)))
 ```
+
 ###Question 4
 ```{r}
 plot(fine_coral$density, surgeon$density, xlab = "Fine-branching Coral Density (m2 per 100m2)", ylab = "Surgeonfish Adult Density (per 100m2)", main = "Fine-branching Coral Density vs Surgeonfish Adult Density")
@@ -337,40 +330,41 @@ ggplot(surgeon_5, aes(x = location, y = density_per_micro, fill = location)) +
   facet_wrap(~year) +
    #scale_y_continuous(expand = c(0,0), limits = c(-20,450), breaks = seq(0,400,100)) + 
   scale_x_discrete(expand = c(0,0)) + 
+  scale_y_continuous(expand = c(0,0), limits = c(0,150)) +
   scale_fill_manual(name = "", values = c("grey51", "royalblue")) +
-  theme_classic() + 
+  theme_bw() + 
   theme(legend.position = "none") +
-  labs(y = "Adult Mean Density (per 100 m^2)",
+  labs(y = "Adult Density (per 100 m^2 of Fine-branching Coral)",
        x = "Location",
-       title = "Adult Surgeonfish Mean Density")
+       title = "Adult Surgeonfish Density per Area Fine-branching Coral Habitat")
 
 ##spotted damsel graph
 ggplot(spotted_5, aes(x = location, y = density_per_micro, fill = location)) +
   geom_col(width = 0.90, alpha = 0.7) +
   #geom_errorbar(aes(ymin = density - ci, ymax = density + ci), width = 0.5) +
   facet_wrap(~year) +
-   #scale_y_continuous(expand = c(0,0), limits = c(-20,450), breaks = seq(0,400,100)) + 
+   scale_y_continuous(expand = c(0,0), limits = c(0,525)) + 
   scale_x_discrete(expand = c(0,0)) + 
   scale_fill_manual(name = "", values = c("grey51", "royalblue")) +
-  theme_classic() + 
+  theme_bw() + 
   theme(legend.position = "none") +
-  labs(y = "Adult Mean Density (per 100 m^2)",
+  labs(y = "Adult Density (per 100 m^2 of Sea Anemome)",
        x = "Location",
-       title = "Adult Spotted Damsel Mean Density")
+       title = "Adult Spotted Damsel Density per Area Sea Anemome Habitat")
 
 ##yellow damsel graph
 ggplot(yellow_5, aes(x = location, y = density_per_micro, fill = location)) +
   geom_col(width = 0.90, alpha = 0.7) +
   #geom_errorbar(aes(ymin = density - ci, ymax = density + ci), width = 0.5) +
   facet_wrap(~year) +
-   #scale_y_continuous(expand = c(0,0), limits = c(-20,450), breaks = seq(0,400,100)) + 
+   scale_y_continuous(expand = c(0,0), limits = c(0,5.5)) + 
   scale_x_discrete(expand = c(0,0)) + 
   scale_fill_manual(name = "", values = c("grey51", "royalblue")) +
-  theme_classic() + 
+  theme_bw() + 
   theme(legend.position = "none") +
-  labs(y = "Adult Mean Density (per 100 m^2)",
+  labs(y = "Adult Density (per 100 m^2 of Mounding Coral)",
        x = "Location",
-       title = "Adult Yellow Damsel Mean Density")
+       title = "Adult Yellow Damsel Density per Area Mounding Coral Habitat")
 
 ##trout graph
 ggplot(trout_5, aes(x = location, y = density_per_micro, fill = location)) +
@@ -379,16 +373,88 @@ ggplot(trout_5, aes(x = location, y = density_per_micro, fill = location)) +
   facet_wrap(~year) +
    #scale_y_continuous(expand = c(0,0), limits = c(-20,450), breaks = seq(0,400,100)) + 
   scale_x_discrete(expand = c(0,0)) + 
+  scale_y_continuous(expand = c(0,0), limits = c(0,55)) +
   scale_fill_manual(name = "", values = c("grey51", "royalblue")) +
-  theme_classic() + 
+  theme_bw() + 
   theme(legend.position = "none") +
-  labs(y = "Adult Mean Density (per 100 m^2)",
+  labs(y = "Adult Density (per 100 m^2 of Coarse-branching Coral)",
        x = "Location",
-       title = "Adult Coral Trout Mean Density")
+       title = "Adult Coral Trout Density per Area Coarse-branching Coral Habitat")
 ```
 
 ###Question 6
 Make scatterplots of all Adult Densities
+
+ - surgeonfish vs coral trout
+ - surgeonfish vs yellow damsel
+ - surgeonfish vs spotted damsel
+ - coral trout vs spotted damsel
+ - coral trout vs yellow damsel
+ - yellow damsel vs spotted damsel
+
+```{r}
+library(ggpmisc)
+#surgeon vs trout
+surgtroutlm <- lm(trout$density~surgeon$density)
+
+ggplot() + 
+  geom_point(aes(x = surgeon$density, y = trout$density)) +
+  geom_smooth(aes(y = trout$density, x = surgeon$density), method = lm, se = FALSE) +
+  theme_bw() +
+  labs(x = "Adult Surgeonfish Density (# per 100 m2)", y = "Adult Coral Trout Density (# per 100 m2)", title = "Adult Surgeonfish vs. Adult Coral Trout Density") +
+    annotate("text", x = 50, y = 150, label = paste("R2 =", format(summary(surgtroutlm)$r.squared, digits=4)))
+
+#surgeon vs yellow damsel
+surgyellowlm <- lm(yellow$density ~ surgeon$density)
+
+ggplot() + 
+  geom_point(aes(x = surgeon$density, y = yellow$density)) +
+  geom_smooth(aes(x = surgeon$density, y = yellow$density), method = lm, se = FALSE) +
+  theme_bw() +
+  labs(x = "Adult Surgeonfish Density (# per 100 m2)", y = "Adult Yellow Damselfish Density (# per 100 m2)", title = "Adult Surgeonfish vs. Adult Yellow Damselfish Density") +
+   annotate("text", x = 300, y = 80, label = paste("R2 =", format(summary(surgyellowlm)$r.squared, digits=4)))
+
+#surgeon vs spotted damsel
+surgspotlm <- lm(spotted$density ~ surgeon$density)
+
+ggplot() + 
+  geom_point(aes(x = surgeon$density, y = spotted$density)) +
+  geom_smooth(aes(x = surgeon$density, y = spotted$density), method = lm, se = FALSE) +
+  theme_bw() +
+  labs(x = "Adult Surgeonfish Density (# per 100 m2)", y = "Adult Spotted Damselfish Density (# per 100 m2)", title = "Adult Surgeonfish vs. Adult Spotted Damselfish Density") +
+ annotate("text", x = 50, y = 750, label = paste("R2 =", format(summary(surgspotlm)$r.squared, digits=4)))
+
+#trout vs spotted damsel
+troutspotlm <- lm(spotted$density ~ trout$density)
+
+ggplot() + 
+  geom_point(aes(x = trout$density, y = spotted$density)) +
+  geom_smooth(aes(x = trout$density, y = spotted$density), method = lm, se = FALSE) +
+  theme_bw() +
+  labs(x = "Adult Coral Trout (# per 100 m2)", y = "Adult Spotted Damselfish Density (# per 100 m2)", title = "Adult Coral Trout vs. Adult Spotted Damselfish Density") +
+ annotate("text", x = 25, y = 750, label = paste("R2 =", format(summary(troutspotlm)$r.squared, digits=4)))
+
+#trout vs yellow damsel
+troutyellowlm <- lm(yellow$density ~ trout$density)
+
+ggplot() + 
+  geom_point(aes(x = trout$density, y = yellow$density)) +
+  geom_smooth(aes(x = trout$density, y = yellow$density), method = lm, se = FALSE) +
+  theme_bw() +
+  labs(x = "Adult Coral Trout (# per 100 m2)", y = "Adult Yellow Damselfish Density (# per 100 m2)", title = "Adult Coral Trout vs. Adult Yellow Damselfish Density") +
+   annotate("text", x = 125, y = 80, label = paste("R2 =", format(summary(troutyellowlm)$r.squared, digits=4)))
+
+#yellow vs spotted damsel
+yellowspotlm <- lm(spotted$density ~ yellow$density)
+
+ggplot() + 
+  geom_point(aes(x = yellow$density, y = spotted$density)) +
+  geom_smooth(aes(x = yellow$density, y = spotted$density), method = lm, se = FALSE) +
+  theme_bw() +
+  labs(x = "Adult Yellow Damselfish (# per 100 m2)", y = "Adult Spotted Damselfish Density (# per 100 m2)", title = "Adult Yellow Damselfish vs. Adult Spotted Damselfish Density") +
+   annotate("text", x = 75, y = 750, label = paste("R2 =", format(summary(yellowspotlm)$r.squared, digits=4)))
+```
+
 
 
 
