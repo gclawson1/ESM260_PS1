@@ -1,9 +1,7 @@
 ---
-title: "PS1"
-author: "Gage Clawson"
-date: "1/12/2020"
 output:
   pdf_document: default
+  word_document: default
   html_document: default
 ---
 
@@ -25,11 +23,24 @@ library(grid)
 adults <- read_excel("04_Data_set_1.xlsx", sheet = "adults")
 recruits <- read_excel("04_Data_set_1.xlsx", sheet = "recruits")
 ```
+**Gage Clawson**
 
-##Question 1
-###Compare and contrast changes in mean density for adults 
-Make a histogram of mean denisty for each organism (y-axis) on both Rarotonga and Aitutaki in 2009 and 2018
-  
+**ESM 260 Problem Set 1**
+
+**Question 1**
+
+In 2009, all fish species had significantly higher densities at Aitutaki than those species at Rarotonga, except yellow damselfish, which had a higher density at Aitutaki, but was not significant. 
+
+In 2018, spotted damselfish and surgeonfish had signficantly higher densities at Aitutaki than at Rarotonga.  Coral trout had a higher density (non-significant) at Aitutaki than at Rarotonga. Yellow damselfish had higher densities at Rarontonga than at Aitutaki, however this result is non-significant. 
+
+From 2009 to 2018, spotted damselfish, and coral trout densities significantly decreased at both locations. Surgeonfish significantly decreased at Rarotonga, but increased (non-significant), at Aitutaki. Yellow damselfish significantly increased at both locations between the years. 
+
+In 2009, coarse-branching corals (non-significant), fine-branching corals (non-significant), and sea anenomes (significant), had higher densities at Aitutaki than at Rarontonga. Mounding corals (non-significant) and algae (non-significant) had higher densities at Rarotonga than at Aitutaki. 
+
+In 2018, coarse-branching corals (significant), fine-branching corals (significant), and sea anenomes (significant), had higher densities at Aitutaki than at Rarontonga. Mounding corals (non-significant) and algae (significant) had higher densities at Rarotonga than at Aitutaki. 
+
+From 2009 to 2018, coarse-branching coral densities decreased at Aitutaki (non-significant) and Rarotonga (significant). Mounding coral densitites increased at Aitutaki (non-significant) and decreased at Rarotonga (non-significant). Mounding coral densitites increased at Aitutaki (non-significant) and decreased at Rarotonga (significant). Sea anenome densitites significantly decreased at Aitutaki and Rarotonga. Algae densitites decreased at Aitutaki (non-significant) and increased at Rarotonga (significant).
+
 ```{r, include = FALSE}
 surgeon <- adults %>% 
   filter(organism == "surgeonfish") 
@@ -179,10 +190,15 @@ grid.arrange(al, blank, blank, blank, nrow = 2)
 ```
 \pagebreak
 
+**Question 2**
 
-##Question 2
-###Compare and contrast changes in mean density for recruits 
-Make a histogram of mean denisty for each organism (y-axis) on both Rarotonga and Aitutaki in 2009 and 2018
+In 2009 there were no significant differences in the density of the species of fish recruits between the two islands, except that of yellow damselfish recruitment, which had significantly higher densities at Rarotongo.
+
+In 2018 there were no significant differences in the density of the species of fish recruits between the two islands, except that of yellow damselfish recruitment, which had significantly higher densities at Rarotongo, and coral trout, which had significantly higher densities at Aitutaki.
+
+Yellow damselfish recruits increased significantly at both islands from 2002 to 2018. Coral trout recruitment significantly decreased on Rarotango from 2002 to 2018. The rest of the fish recruits show no significantly changes across 2009 and 2018. 
+
+
 \pagebreak
 
 ```{r, include = FALSE}
@@ -257,9 +273,13 @@ tr_recruit <- ggplot(trout_recruits, aes(x = location, y = recruits, fill = loca
 grid.arrange(s_recruit, sd_recruit, nrow = 1)
 grid.arrange(y_recruit, tr_recruit, nrow = 1)
 ```
+\pagebreak 
 
-###Question 3
-Calculate Recruits per 100 m^2 reef area and graph adult vs recruits scatterplots
+**Question 3**
+
+Surgeonfish, coral trout, and spotted damselfish show a strong correlation (R^2 = 0.9675, R^2 = 0.9434, R^2 = 0.8958 respectively) between adult densities per 100 square meters and recruitment density per 100 square meters. It is possible that this means that there is a relationship between having high densities of adults and high densities of recruits in the same area. Yellow damselfish show a weak correlation (R^2 = 0.4017). To obtain a better estimate of yellow damselfish, more surveys should be conducted. There is a small sample size from the original surveys. 
+
+ 
 
 ```{r, include = FALSE}
 recruits_q3 <- read_excel("04_Data_set_1.xlsx", sheet = "recruits_3") %>%
@@ -283,22 +303,22 @@ par(mar = c(2, 2, 1, 1)) # make the plots be closer together
 
 plot(surgeon$density, surgeon_recruit_q3$recruits_100m, xlab = "", ylab = "", main = "Surgeon")
 abline(fit1 <- lm(surgeon_recruit_q3$recruits_100m ~ surgeon$density))
-legend("top", bty="n", legend=paste("R^2 =", 
+legend("topleft", bty="n", legend=paste("R^2 =", 
        format(summary(fit1)$r.squared, digits=4)))
 
 plot(yellow$density, yellow_recruits_q3$recruits_100m, xlab = "", ylab = "", main = "Yellow Damsel")
 abline(fit2 <- lm(yellow_recruits_q3$recruits_100m ~ yellow$density))
-legend("top", bty="n", legend=paste("R^2 =", 
+legend("topleft", bty="n", legend=paste("R^2 =", 
        format(summary(fit2)$r.squared, digits=4)))
 
 plot(spotted$density, spotted_recruits_q3$recruits_100m, xlab = "", ylab = "", main = "Spotted Damsel")
 abline(fit3 <- lm(spotted_recruits_q3$recruits_100m ~ spotted$density))
-legend("top", bty="n", legend=paste("R^2 =", 
+legend("topleft", bty="n", legend=paste("R^2 =", 
        format(summary(fit3)$r.squared, digits=4)))
 
 plot(trout$density, trout_recruits_q3$recruits_100m, xlab = "", ylab = "", main = "Coral Trout")
 abline(fit4 <- lm(trout_recruits_q3$recruits_100m ~ trout$density))
-legend("top", bty="n", legend=paste("R^2 =", 
+legend("topleft", bty="n", legend=paste("R^2 =", 
        format(summary(fit4)$r.squared, digits=4)))
 
 # print the overall labels
@@ -306,8 +326,13 @@ mtext('Adult Density (per 100 m^2)', side = 1, outer = TRUE, line = 2)
 mtext('Recruitment Density (per 100 m^2)', side = 2, outer = TRUE, line = 2)
 
 ```
+\pagebreak 
 
-###Question 4
+**Question 4**
+
+There is a strong, positive correlation between microhabitat density with adult surgeonfish (R^2 = 0.9646) and adult spotted damselfish densities (R^2 = 0.9482). There is a positive correlation between increasing coarse-branching coral microhabitat and adult coral trout densities (R^2 = 0.7761). This indicates that as the preferred microhabitat increases for each species (surgeonfish, spotted damselfish, and coral trout), conditions lead to have more adult species in that area. There is no significant correlation (R^2 = 0.0001) between the mounding coral microhabitat and adult yellow damselfish observed in the data. 
+
+
 ```{r, echo = FALSE}
 
 par(mfrow = c(2, 2))
@@ -316,22 +341,22 @@ par(mar = c(2, 2, 1, 1)) # make the plots be closer together
 
 plot(fine_coral$density, surgeon$density, xlab = "", ylab = "", main = "Fine-branching vs Surgeon")
 abline(fit_fine <- lm(surgeon$density ~ fine_coral$density ))
-legend("top", bty="n", legend=paste("R^2 =", 
+legend("topleft", bty="n", legend=paste("R^2 =", 
        format(summary(fit_fine)$r.squared, digits=4)))
 
 plot(sea_an$density, spotted$density, xlab = "", ylab = "", main = "Sea Anenome vs Spotted Damsel")
 abline(fit_sea <- lm(spotted$density ~ sea_an$density ))
-legend("top", bty="n", legend=paste("R^2 =", 
+legend("topleft", bty="n", legend=paste("R^2 =", 
        format(summary(fit_sea)$r.squared, digits=4)))
 
 plot(coarse_corals$density, trout$density, xlab = "", ylab = "", main = "Coarse-branching vs Coral Trout")
 abline(fit_coarse <- lm(trout$density ~ coarse_corals$density ))
-legend("top", bty="n", legend=paste("R^2 =", 
+legend("topleft", bty="n", legend=paste("R^2 =", 
        format(summary(fit_coarse)$r.squared, digits=4)))
 
 plot(mound_coral$density, yellow$density, xlab = "", ylab = "", main = "Mounding Coral vs Yellow Damsel")
 abline(fit_mound <- lm(yellow$density ~ mound_coral$density ))
-legend("top", bty="n", legend=paste("R^2 =", 
+legend("topleft", bty="n", legend=paste("R^2 =", 
        format(summary(fit_mound)$r.squared, digits=4)))
 
 
@@ -365,8 +390,13 @@ abline(fit_sea <- lm(spotted$density ~ sea_an$density ))
 legend("top", bty="n", legend=paste("R^2 =", 
        format(summary(fit_sea)$r.squared, digits=4)))
 ```
+\pagebreak 
 
-###Question 5
+**Question 5**
+
+Density of adult surgeonfish, spotted damselfish, and coral trout per area of juvenile microhabitat show a decline from 2009 to 2018 at both islands. The most extreme cases are the decline of adult coral trout and adult spotted damselfish at Rarotonga between 2009 and 2018. Adult yellow damselfish show an increase in densitiy per area of juvenile microhabitat in both Rarotonga and Aitutaki between 2009 and 2018. 
+
+
 ```{r, include = FALSE}
 adults_5 <- read_excel("04_Data_set_1.xlsx", sheet = "adults_5")
 ```
@@ -445,16 +475,11 @@ tr_habitat <- ggplot(trout_5, aes(x = location, y = density_per_micro, fill = lo
 grid.arrange(s_habitat, sd_habitat, nrow = 1)
 grid.arrange(yd_habitat, tr_habitat, nrow =1)
 ```
+\pagebreak 
 
-###Question 6
-Make scatterplots of all Adult Densities
+**Question 6**
 
- - surgeonfish vs coral trout
- - surgeonfish vs yellow damsel
- - surgeonfish vs spotted damsel
- - coral trout vs spotted damsel
- - coral trout vs yellow damsel
- - yellow damsel vs spotted damsel
+There is a strong, positive correlation between the density of adult coral trout and the density of adult spotted damselfish per 100 square meters (R^2 = 0.9704). As the density of coral trout increases in a given area, the density of spotted damselfish increases as well. There is a strong, negative correlation between adult coral trout density and yellow damselfish per 100 square meters (R2 = 0.8915), meaning that as coral trout densities increase, yellow damselfish density decreases. There is a relatively strong negative correlation observed for adult yellow damselfish and adult spotted damselfish densities (R2 = 0.7656), meaning that as adult yellow damselfish density increases, spotted damselfish density decreases. The rest of the species comparisons do not show strong correlations. 
 
 ```{r, include = FALSE}
 #surgeon vs trout
