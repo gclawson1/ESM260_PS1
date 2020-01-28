@@ -1,7 +1,7 @@
 ---
 output:
-  pdf_document: default
   word_document: default
+  pdf_document: default
   html_document: default
 ---
 
@@ -427,7 +427,8 @@ s_habitat <- ggplot(surgeon_5, aes(x = location, y = density_per_micro, fill = l
   theme(legend.position = "none") +
   labs(y = "Adult Density (per 100 m^2 of Fine-branching Coral)",
        x = "Location",
-       title = "Surgeon")
+       title = "Surgeon") #+
+  #theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 ##spotted damsel graph
 sd_habitat <- ggplot(spotted_5, aes(x = location, y = density_per_micro, fill = location)) +
@@ -441,7 +442,8 @@ sd_habitat <- ggplot(spotted_5, aes(x = location, y = density_per_micro, fill = 
   theme(legend.position = "none") +
   labs(y = "Adult Density (per 100 m^2 of Sea Anemome)",
        x = "Location",
-       title = "Spotted Damsel")
+       title = "Spotted Damsel") #+
+  #theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 ##yellow damsel graph
 yd_habitat <- ggplot(yellow_5, aes(x = location, y = density_per_micro, fill = location)) +
@@ -455,7 +457,8 @@ yd_habitat <- ggplot(yellow_5, aes(x = location, y = density_per_micro, fill = l
   theme(legend.position = "none") +
   labs(y = "Adult Density (per 100 m^2 of Mounding Coral)",
        x = "Location",
-       title = "Yellow Damsel")
+       title = "Yellow Damsel") #+
+  #theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 ##trout graph
 tr_habitat <- ggplot(trout_5, aes(x = location, y = density_per_micro, fill = location)) +
@@ -470,7 +473,8 @@ tr_habitat <- ggplot(trout_5, aes(x = location, y = density_per_micro, fill = lo
   theme(legend.position = "none") +
   labs(y = "Adult Density (per 100 m^2 of Coarse-branching Coral)",
        x = "Location",
-       title = "Coral Trout")
+       title = "Coral Trout") #+
+  #theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 grid.arrange(s_habitat, sd_habitat, nrow = 1)
 grid.arrange(yd_habitat, tr_habitat, nrow =1)
