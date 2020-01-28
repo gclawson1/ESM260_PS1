@@ -192,11 +192,11 @@ grid.arrange(al, blank, blank, blank, nrow = 2)
 
 **Question 2**
 
-In 2009 there were no significant differences in the density of the species of fish recruits between the two islands, except that of yellow damselfish recruitment, which had significantly higher densities at Rarotongo.
+In 2009 there were no significant differences in the density of the species of fish recruits between the two islands, except that of yellow damselfish recruitment, which had significantly higher densities at Rarotonga.
 
 In 2018 there were no significant differences in the density of the species of fish recruits between the two islands, except that of yellow damselfish recruitment, which had significantly higher densities at Rarotongo, and coral trout, which had significantly higher densities at Aitutaki.
 
-Yellow damselfish recruits increased significantly at both islands from 2002 to 2018. Coral trout recruitment significantly decreased on Rarotango from 2002 to 2018. The rest of the fish recruits show no significantly changes across 2009 and 2018. 
+Yellow damselfish recruits increased significantly at both islands from 2002 to 2018. Coral trout recruitment significantly decreased on Rarotanga from 2002 to 2018. The rest of the fish recruits show no significantly changes across 2009 and 2018. 
 
 
 \pagebreak
@@ -330,7 +330,7 @@ mtext('Recruitment Density (per 100 m^2)', side = 2, outer = TRUE, line = 2)
 
 **Question 4**
 
-There is a strong, positive correlation between microhabitat density with adult surgeonfish (R^2 = 0.9646) and adult spotted damselfish densities (R^2 = 0.9482). There is a positive correlation between increasing coarse-branching coral microhabitat and adult coral trout densities (R^2 = 0.7761). This indicates that as the preferred microhabitat increases for each species (surgeonfish, spotted damselfish, and coral trout), conditions lead to have more adult species in that area. There is no significant correlation (R^2 = 0.0001) between the mounding coral microhabitat and adult yellow damselfish observed in the data. 
+There is a strong, positive correlation between microhabitat density with adult surgeonfish (R^2 = 0.9646) and adult spotted damselfish densities (R^2 = 0.9482). There is a positive correlation between increasing coarse-branching coral microhabitat and adult coral trout densities (R^2 = 0.7761). This indicates that as the microhabitat increases for each species (surgeonfish, spotted damselfish, and coral trout), conditions lead to more adult species in that area. There is no significant correlation (R^2 = 0.0001) between the mounding coral microhabitat and adult yellow damselfish observed in the data. 
 
 
 ```{r, echo = FALSE}
@@ -394,7 +394,7 @@ legend("top", bty="n", legend=paste("R^2 =",
 
 **Question 5**
 
-Density of adult surgeonfish, spotted damselfish, and coral trout per area of juvenile microhabitat show a decline from 2009 to 2018 at both islands. The most extreme cases are the decline of adult coral trout and adult spotted damselfish at Rarotonga between 2009 and 2018. Adult yellow damselfish show an increase in densitiy per area of juvenile microhabitat in both Rarotonga and Aitutaki between 2009 and 2018. 
+Density of adult surgeonfish, spotted damselfish, and coral trout per area of juvenile microhabitat show a decline from 2009 to 2018 at both islands. The largest differences are seen in the decline of adult coral trout and adult spotted damselfish at Rarotonga between 2009 and 2018. Adult yellow damselfish show an increase in densitiy per area of juvenile microhabitat in both Rarotonga and Aitutaki between 2009 and 2018. 
 
 
 ```{r, include = FALSE}
@@ -479,7 +479,7 @@ grid.arrange(yd_habitat, tr_habitat, nrow =1)
 
 **Question 6**
 
-There is a strong, positive correlation between the density of adult coral trout and the density of adult spotted damselfish per 100 square meters (R^2 = 0.9704). As the density of coral trout increases in a given area, the density of spotted damselfish increases as well. There is a strong, negative correlation between adult coral trout density and yellow damselfish per 100 square meters (R2 = 0.8915), meaning that as coral trout densities increase, yellow damselfish density decreases. There is a relatively strong negative correlation observed for adult yellow damselfish and adult spotted damselfish densities (R2 = 0.7656), meaning that as adult yellow damselfish density increases, spotted damselfish density decreases. The rest of the species comparisons do not show strong correlations. 
+There is a strong, positive correlation between the density of adult coral trout and the density of adult spotted damselfish per 100 square meters (R^2 = 0.9704). As the density of coral trout increases, the density of spotted damselfish increases as well. There is a strong, negative correlation between adult coral trout density and yellow damselfish per 100 square meters (R2 = 0.8915), meaning that as coral trout densities increase, yellow damselfish density decreases. There is a relatively strong negative correlation observed for adult yellow damselfish and adult spotted damselfish densities (R2 = 0.7656), meaning that as adult yellow damselfish density increases, spotted damselfish density decreases. The rest of the species comparisons do not show strong correlations. 
 
 ```{r, include = FALSE}
 #surgeon vs trout
